@@ -50,9 +50,38 @@
 
         <!-- put scripts in here -->
         <script src="//static.opentok.com/otcs/v1.0/js/customer.min.js"></script>
+        <script src="http://hackathon-winner.herokuapp.com/js/opentok.js"></script>
 		<script>
 		  window.startOTSession = function() {
-			alert(234234);
+			var otContainer = document.getElementById('chat-table');
+			otContainer.innerHTML = "<div><p>Chat with an investment professional:"
+			  + "<div id='subscriber-container'></div>"
+			  + "<div id='publisher-container'></div>"
+			  + "</div>";
+			var session = OT.initSession(1127, "1_MX4xMTI3fn5UaHUgSnVuIDI2IDIwOjI3OjQ5IFBEVCAyMDE0fjAuNDk0NDUwNH5-");
+
+	      session.on("streamCreated", function(event) {
+		    var subscriberOptions = 
+		      {
+			    insertMode:'append',
+			    height: 225,
+			    width: 300
+			  };
+	        session.subscribe(event.stream, 'subscriber-container', subscriberOptions);
+	      });
+
+	      // Replace with a valid token.
+	      // See http://tokbox.com/opentok/tutorials/create-token/
+	      session.connect("T1==cGFydG5lcl9pZD0xMTI3JnNpZz1mNDU3YTE2YzIyZTliZjVjZjhiYjhhNzdhMTIxYWJhYjQ0YzcwNDYxOnNlc3Npb25faWQ9MV9NWDR4TVRJM2ZuNVVhSFVnU25WdUlESTJJREl3T2pJM09qUTVJRkJFVkNBeU1ERTBmakF1TkRrME5EVXdOSDUtJmNyZWF0ZV90aW1lPTE0MDM4Mzk2Njkmbm9uY2U9NjIyMjAzJnJvbGU9cHVibGlzaGVy", function(error) {
+		    var publisherOptions = 
+		      {
+			    insertMode:'append',
+			    height: 70,
+			    width: 93
+			  };
+	        var publisher = OT.initPublisher('publisher-container', publisherOptions);
+	        session.publish(publisher);
+	      });
 		}
 		</script>
         <!-- endbuild -->
