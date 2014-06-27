@@ -58,30 +58,42 @@
 			  + "<div id='subscriber-container'></div>"
 			  + "<div id='publisher-container'></div>"
 			  + "</div>";
-			var session = OT.initSession(1127, "1_MX4xMTI3fn5UaHUgSnVuIDI2IDIwOjI3OjQ5IFBEVCAyMDE0fjAuNDk0NDUwNH5-");
+		  var apiKey = 472032;
+		  var sessionId = "2_MX40NzIwMzJ-flRodSBKdW4gMjYgMjE6MTE6NDggUERUIDIwMTR-MC4zNTE1MTM5OH5-";
+		  var token = "T1==cGFydG5lcl9pZD00NzIwMzImc2lnPTVmNmQzZTFhM2Q4YTgwZTFiZjc5MzIxODI0OTRmYzBhOTQzNmNhZGM6cm9sZT1tb2RlcmF0b3Imc2Vzc2lvbl9pZD0yX01YNDBOekl3TXpKLWZsUm9kU0JLZFc0Z01qWWdNakU2TVRFNk5EZ2dVRVJVSURJd01UUi1NQzR6TlRFMU1UTTVPSDUtJmNyZWF0ZV90aW1lPTE0MDM4NDIzNDMmbm9uY2U9MC4yMjkwMzY2Njc2NDU5Mzk3NyZleHBpcmVfdGltZT0xNDA2NDM0Mjk4";
+		  var sessionOptions =
+		    {
+		      token: token,
+		      redirectUrl: "http://hackathon-winner-2.herokuapp.com",
+		      logoUrl: "http://ideasinspiringinnovation.files.wordpress.com/2010/03/logo_atlantic-bank-of-ny-2.png",
+		      roomName: "OpenTok Extension Demo",
+		      publisherName: "Jeff",
+		      exitUrl: "http://hackathon-winner-2.herokuapp.com"
+		    };
+		  
+		  var session = OT.initSession(apiKey, sessionId, sessionOptions);
 
-	      session.on("streamCreated", function(event) {
-		    var subscriberOptions = 
-		      {
-			    insertMode:'append',
-			    height: 225,
-			    width: 300
-			  };
-	        session.subscribe(event.stream, 'subscriber-container', subscriberOptions);
-	      });
-
-	      // Replace with a valid token.
-	      // See http://tokbox.com/opentok/tutorials/create-token/
-	      session.connect("T1==cGFydG5lcl9pZD0xMTI3JnNpZz1mNDU3YTE2YzIyZTliZjVjZjhiYjhhNzdhMTIxYWJhYjQ0YzcwNDYxOnNlc3Npb25faWQ9MV9NWDR4TVRJM2ZuNVVhSFVnU25WdUlESTJJREl3T2pJM09qUTVJRkJFVkNBeU1ERTBmakF1TkRrME5EVXdOSDUtJmNyZWF0ZV90aW1lPTE0MDM4Mzk2Njkmbm9uY2U9NjIyMjAzJnJvbGU9cHVibGlzaGVy", function(error) {
-		    var publisherOptions = 
-		      {
-			    insertMode:'append',
-			    height: 70,
-			    width: 93
-			  };
-	        var publisher = OT.initPublisher('publisher-container', publisherOptions);
-	        session.publish(publisher);
-	      });
+		  if (session) {
+	        session.on("streamCreated", function(event) {
+		      var subscriberOptions =
+	            {
+			      insertMode:'append',
+			      height: 225,
+			      width: 300
+			    };
+	            session.subscribe(event.stream, 'subscriber-container', subscriberOptions);
+	          });
+	        session.connect(token, function(error) {
+		      var publisherOptions =
+		        {
+			      insertMode:'append',
+			      height: 70,
+			      width: 93
+			    };
+	          var publisher = OT.initPublisher('publisher-container', publisherOptions);
+	          session.publish(publisher);
+	        });
+	      }
 		}
 		</script>
         <!-- endbuild -->
