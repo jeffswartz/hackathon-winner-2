@@ -7911,13 +7911,30 @@ td.visible-print {
 }
 
 /* line 109, ../../app/styles/_account.scss */
+#subscriber-container {
+  background-color: gray;
+  height: 225px;
+  width: 300px;
+}
+
+/* line 114, ../../app/styles/_account.scss */
+#publisher-container {
+  background-color: gray;
+  height: 75px;
+  width: 100px;
+  float: left;
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 122, ../../app/styles/_account.scss */
 .chat-table-cell {
   display: table-cell;
   height: 100%;
   vertical-align: middle;
 }
 
-/* line 122, ../../app/styles/_account.scss */
+/* line 135, ../../app/styles/_account.scss */
 .communication-center .communication-subtitle {
   padding-top: 5px;
   padding-bottom: 10px;
@@ -7925,36 +7942,36 @@ td.visible-print {
   font-size: 14px;
   color: #315165;
 }
-/* line 128, ../../app/styles/_account.scss */
+/* line 141, ../../app/styles/_account.scss */
 .communication-center .meeting {
   font-size: 13px;
   font-family: "Avenir Book";
 }
-/* line 133, ../../app/styles/_account.scss */
+/* line 146, ../../app/styles/_account.scss */
 .communication-center .meeting.highlight {
   font-family: "AvenirLTStd Medium";
 }
 
-/* line 139, ../../app/styles/_account.scss */
+/* line 152, ../../app/styles/_account.scss */
 .sessions .sessions-title {
   padding-top: 25px;
   font-family: "Avenir LT W01 85 Heavy";
   font-size: 14px;
   color: #315165;
 }
-/* line 146, ../../app/styles/_account.scss */
+/* line 159, ../../app/styles/_account.scss */
 .sessions .session {
   padding-top: 5px;
   padding-bottom: 10px;
   font-size: 16px;
   font-family: "Avenir Book";
 }
-/* line 153, ../../app/styles/_account.scss */
+/* line 166, ../../app/styles/_account.scss */
 .sessions .session .image-holder {
   cursor: pointer;
   line-height: 65px;
 }
-/* line 156, ../../app/styles/_account.scss */
+/* line 169, ../../app/styles/_account.scss */
 .sessions .session .image-holder.pending {
   opacity: .5;
 }

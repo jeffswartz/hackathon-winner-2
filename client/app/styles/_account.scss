@@ -106,6 +106,19 @@
   height: 108px;
   display: table;
 }
+#subscriber-container {
+  background-color:gray;
+  height:225px;
+  width:300px;
+}
+#publisher-container {
+  background-color:gray;
+  height:75px;
+  width:100px;
+  float: left;
+  position: absolute;
+  bottom: 0;
+}
 .chat-table-cell {
   display: table-cell;
   height: 100%;
