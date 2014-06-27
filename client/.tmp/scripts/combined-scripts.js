@@ -271,7 +271,7 @@
     }).property('meetings'),
     meetings: [
       {
-        title: 'Portfolio Review 2013',
+        title: 'Portfolio Review',
         rep: {
           id: 'Scott',
           name: 'Scott Small'
@@ -675,7 +675,7 @@
     }).property('meetings'),
     meetings: [
       {
-        title: 'Portfolio Review 2013',
+        title: 'Portfolio Review',
         rep: {
           id: 'Scott',
           name: 'Scott'

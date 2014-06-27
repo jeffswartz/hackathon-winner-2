@@ -7,7 +7,7 @@ TBB.AccountController = Em.ObjectController.extend
   ).property('meetings')
   meetings: [
     {
-      title: 'Portfolio Review 2013'
+      title: 'Portfolio Review'
       rep:
         id: 'Scott'
         name: 'Scott Small'
