@@ -101,7 +101,6 @@ TBB.RepController = Em.ObjectController.extend
   isAccountOverviewOpen: true
   isRecommendedFundsOpen: true
   setOTCSF: (->
-
     window.OTCSF = {}
     window.OTCSF.addAdvisors = (advisorArray) =>
       console.log('adding advisors')

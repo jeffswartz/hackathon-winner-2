@@ -61,7 +61,7 @@
     }).observes('newMeeting'),
     actions: {
       startChat: function() {
-        return window.OTCSF.startChat(true);
+        return window.startOTSession();
       },
       showSharedContent: function() {
         $('#sharedContent').collapse('show');

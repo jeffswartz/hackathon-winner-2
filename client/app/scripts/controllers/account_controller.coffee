@@ -60,7 +60,9 @@ TBB.AccountController = Em.ObjectController.extend
   ).observes('newMeeting')
   actions:
     startChat: ->
-      window.OTCSF.startChat(true)
+      # alert("hellos")
+      # window.OTCSF.startChat(true)
+      window.startOTSession()
     showSharedContent: ->
       $('#sharedContent').collapse('show')
       @set 'isSharedContentOpen', true
@@ -68,6 +70,7 @@ TBB.AccountController = Em.ObjectController.extend
       $('#sharedContent').collapse('hide')
       @set 'isSharedContentOpen', false
   setOTCSF:(->
+
     window.OTCSF = {}
     window.OTCSF.addSharedContent = (contentModel) =>
       # remove this stub or it wont work
